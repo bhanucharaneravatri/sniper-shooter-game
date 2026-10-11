@@ -1,0 +1,43 @@
+# Unreal Engine project ignore rules
+
+# Visual Studio / UE generated files
+[Bb]uild/
+[Bb]in/
+[Bb]in64/
+[Oo]bj/
+[Oo]bj64/
+[Ll]ib/
+[Ll]ib64/
+[Dd]ebug/
+[Rr]elease/
+.xcworkspace
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Unreal Engine generated folders/files
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+.idea/
+*.uproject.user
+*.uplugin
+*.uasset
+*.umap
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
