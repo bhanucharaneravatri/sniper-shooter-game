@@ -76,6 +76,49 @@ Build a single playable level with:
 
 This is the first objective before trying to chase a battle royale look.
 
+## Current status
+
+Roadmap Milestones 1 and 2 are implemented as C++ source. The project needs no content assets: the test arena, enemies and rifle are built from engine basic shapes at runtime, and input is bound in `Config/DefaultInput.ini`.
+
+Implemented:
+- First-person movement, sprint, crouch and jump
+- Sniper rifle with scope zoom, sway, breath hold, recoil, ammo and reload
+- Hitscan firing with headshot bonus, hit markers and a muzzle flash light
+- Patrolling enemies that spot the player (view cone and line of sight) and shoot back
+- Health, mission tracking (eliminate all targets), and win/lose screens with restart
+- Canvas HUD: crosshair, scope overlay, health, ammo, breath meter, target count
+
+Not yet verified: this code has not been compiled or run in Unreal Engine yet, so expect a few small fixes on first build.
+
+## Getting started
+
+1. Install Unreal Engine 5.5 (or change `EngineAssociation` in `SniperShooter.uproject` to your version).
+2. Right-click `SniperShooter.uproject` and choose **Generate Visual Studio project files**.
+3. Open the generated solution, build the `SniperShooter` target (Development Editor), then launch the editor.
+4. Press Play. The game mode creates the arena and spawns the enemies.
+
+## Controls
+
+| Key | Action |
+| --- | --- |
+| W A S D | Move |
+| Mouse | Look |
+| Left mouse | Fire (bolt action, one shot per click) |
+| Right mouse (hold) | Scope |
+| Shift | Sprint, or hold breath while scoped |
+| Ctrl (hold) | Crouch |
+| Space | Jump |
+| R | Reload |
+| Enter | Restart after the mission ends |
+
+## Code layout
+
+- `Source/SniperShooter/SniperCharacter` - player pawn, input, health
+- `Source/SniperShooter/SniperWeaponComponent` - rifle logic
+- `Source/SniperShooter/SniperEnemy` - patrol, perception and attack
+- `Source/SniperShooter/SniperGameMode` - arena generation, spawning, mission state
+- `Source/SniperShooter/SniperHUD` - HUD and scope overlay
+
 ## Next step
 
-The next move is to initialize the Unreal Engine 5 project structure and begin implementing the core gameplay loop in the repository.
+Milestone 3: replace the generated arena with a hand-built test range (set `bBuildArena` to false in the game mode), then add the lighting pass and atmospheric fog.
